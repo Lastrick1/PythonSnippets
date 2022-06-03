@@ -1,0 +1,33 @@
+# Prints the contents of a 2-D array height x width
+# Toggle is necessary for Codingame if printing final answer (True) or debugging (False)
+def printMap(map, height, width, toggle):
+    for i in range(height):
+        out = ""
+        for j in range(width):
+            out += str(map[i][j])
+        if (toggle):
+            print(out)
+        else:
+            print(out, file=sys.stderr, flush = True)
+    print("", file=sys.stderr, flush = True)
+
+# Returns list of characters from splitting string
+def split(word):
+    return [char for char in word]
+
+# Initialize 2-D array of size w and h (of default value)
+map = [[default_value] * w for i in range(h)]
+
+# Prints the contents of a 2-D array height x width
+# Toggle is necessary for Codingame if printing final answer (True) or debugging (False)
+# Arranges array in grid of column width = num_chars
+def printGrid(map, num_chars, height, width, toggle):
+    for i in range(height):
+        out = ""
+        for j in range(width):
+            out += str(map[i][j]) + " " * (1 + num_chars - len(str(map[i][j])))
+        if (toggle):
+            print(out)
+        else:
+            print(out, file=sys.stderr, flush = True)
+    print("", file=sys.stderr, flush = True)
